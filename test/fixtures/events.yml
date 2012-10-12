@@ -1,0 +1,13 @@
+one:
+  title: MyString
+  description: MyText
+  event_type: 1
+  location: MyString
+  capacity: 1
+
+two:
+  title: MyString
+  description: MyText
+  event_type: 1
+  location: MyString
+  capacity: 1

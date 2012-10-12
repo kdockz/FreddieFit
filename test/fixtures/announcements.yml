@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  date: 2012-10-12
+  description: MyText
+  classification: 1
+
+two:
+  title: MyString
+  date: 2012-10-12
+  description: MyText
+  classification: 1
