@@ -28,12 +28,12 @@ class Event < ActiveRecord::Base
   # Methods
   
   # Returns status of the event, and unavailable when it is not set.
-  def get_status
-    unless self.status.nil? then 
-      return STATUS[self.status][0]
-    end
-    "Unavailable"
-  end
+  # def get_status
+  #   unless self.status.nil? then 
+  #     return STATUS[self.status][0]
+  #   end
+  #   "Unavailable"
+  # end
   
   # Determines whether there is any space left for an event that has a capacity.
   def free_space?

@@ -1,10 +1,23 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    
+    # Grab upcoming events only.
+    @events = Event.upcoming
+    
+    #Grab past events.
+    @past_events = Event.past
+
   end
 
   def show
+
+    # Store the current event in a session variable for registration purposes.
     @event = Event.find(params[:id])
+    session[:event] = @event
+        
+    # Find all users registered for a particular event.
+    @registered_users = Registration.for_event(@event.id)
+    
   end
 
   def new

@@ -1,3 +1,10 @@
+<script>
+  $(function() {
+    $( "#event_start_date" ).datepicker({ dateFormat: 'dd-mm-yy' });
+    $( "#event_end_date" ).datepicker({ dateFormat: 'dd-mm-yy' });
+  });
+</script>
+
 <%= form_for @event do |f| %>
   <%= f.error_messages %>
   <p>
@@ -12,6 +19,23 @@
     <%= f.label :event_type %><br />
     <%= f.number_field :event_type %>
   </p>
+
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.text_field :start_date, :onchange => "document.getElementById('event_end_date').value = value" %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.text_field :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :start_time %><br />
+    <%= f.text_field :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br />
+    <%= f.text_field :end_time %>
+
   <p>
     <%= f.label :location %><br />
     <%= f.text_field :location %>
@@ -19,6 +43,11 @@
   <p>
     <%= f.label :capacity %><br />
     <%= f.number_field :capacity %>
+
+  <div class="field">
+    <%= f.label 'Open Registration' %><br />
+  <%= f.select :registration, [['Yes', true], ['No', false]] %>
+  </div>
   </p>
   <p><%= f.submit %></p>
 <% end %>
