@@ -13,6 +13,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :user_id
       t.integer :trainer_id
       t.integer :registration
+      t.boolean :active
       t.timestamps
     end
   end

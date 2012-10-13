@@ -43,5 +43,17 @@ gem 'shoulda'
 gem 'cucumber'
 gem 'cancan'
 gem 'minitest'
+gem "will_paginate"
+gem "aaronh-chronic"
+gem "chronic"
+gem "populator"
+gem "faker"
+gem "formtastic"
+gem "paperclip"
+gem "gcal4ruby"
+gem "validates_timeliness"
+gem "simplecov"
+gem 'test-unit', :require => "test/unit"
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 #gem "mocha", :group => :test

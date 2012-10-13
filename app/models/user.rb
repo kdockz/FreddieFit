@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
-  attr_accessible :username, :email, :password, :password_confirmation
+  attr_accessible :username, :email, :first_name, :last_name, :password, :password_confirmation
 
   attr_accessor :password
   before_save :prepare_password
@@ -23,6 +23,39 @@ class User < ActiveRecord::Base
     BCrypt::Engine.hash_secret(pass, password_salt)
   end
 
+  def nice_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
+  def admin_or_trainer?
+    if access_level >= 30 then
+      return true
+    else
+      return false
+    end
+  end
+  
+  def admin?
+    if access_level == 50 then
+      return true
+    else
+     return false
+   end
+  end
+  
+  def trainer?
+    if access_level == 30 then
+      return true
+    else
+      return false
+    end
+  end
+  
+  def make_inactive 
+    self.active = false
+    self.save!
+  end
+
   private
 
   def prepare_password
@@ -31,4 +64,5 @@ class User < ActiveRecord::Base
       self.password_hash = encrypt_password(password)
     end
   end
+
 end

@@ -24,5 +24,20 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
+    alias_action :update, :destroy, :to => :modify
+    
+    user ||= User.new
+    if user.admin?
+      can :manage, :all
+    else
+      can :read, :all
+      #can :modify, Registration, :user_id => user.id
+      can :modify, User, :id => user.id
+    end
+    
+    if user.trainer?
+      can :modify, Event, :user_id => user.id
+      can :create, Event
+    end
   end
 end
