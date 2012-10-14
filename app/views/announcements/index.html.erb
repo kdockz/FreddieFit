@@ -1,23 +1,44 @@
-<% title "Announcements" %>
-
-<table>
-  <tr>
+<div id="nav-header">
+  <br />
+  <h2>News & Announcements</h2> 
+  <% if can? :create, Announcement %>
+    <h3 class="title"><%= link_to(image_tag('icons/add.gif', :size => '20x20'), new_announcement_path) %></h3>
+  <% end %>
+</div>
+<br />
+<div id="page-content">
+<% if !@announcements.empty? %> 
+<table class="datagrid" style="text-align: center; margin-left: auto; margin-right: auto">
+  <thead class="datagrid">
+    <% if can? :modify, Announcement %>
+      <th></th>
+    <% end %>
     <th>Title</th>
     <th>Date</th>
-    <th>Description</th>
-    <th>Classification</th>
-  </tr>
-  <% for announcement in @announcements %>
-    <tr>
-      <td><%= announcement.title %></td>
-      <td><%= announcement.date %></td>
-      <td><%= announcement.description %></td>
-      <td><%= announcement.classification %></td>
-      <td><%= link_to "Show", announcement %></td>
-      <td><%= link_to "Edit", edit_announcement_path(announcement) %></td>
-      <td><%= link_to "Destroy", announcement, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
+    <% if can? :modify, @announcement %>
+      <th>Active</th>
+      <th></th>
+    <% end %>
+  </thead>
+
+  <% @announcements.each do |announcement| %>
+  <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+    <% if can? :modify, announcement %>
+      <td><%= link_to(image_tag('icons/edit.png', :border => 0, :size => "20x20"), edit_announcement_path(announcement)) %></td>
+    <% end %>
+    <td><%= link_to(announcement.title, announcement) %></td>
+    <td><%= show_date(announcement.date) %></td>
+    <% if can? :modify, announcement %>
+      <td><%= link_to(image_tag('icons/trash.gif', :border => 0, :size => "20x20"), announcement, :confirm => 'Are you sure?', :method => :delete)  %></td>
+    <% end %>
+  </tr
   <% end %>
 </table>
 
-<p><%= link_to "New Announcement", new_announcement_path %></p>
+<% else %>
+
+  <p><em>There are no announcements.</em></p>
+  
+<% end %>
+</div>
+

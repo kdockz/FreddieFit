@@ -9,7 +9,8 @@ class Event < ActiveRecord::Base
   
   # Array
   # STATUS = [['Upcoming', 0], ['Ongoing', 1], ['Complete', 2]]
-    
+  EVENT_TYPES = [['Class', 0], ['Fitness Event', 1], ['Food Event', 2]]
+
   # Validations
   validates :title, :presence => true
   validates :location, :presence => true

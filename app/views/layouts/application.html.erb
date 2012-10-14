@@ -3,7 +3,9 @@
 <head>
   <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
   <%= stylesheet_link_tag "application", 'jquery-ui-1.9.0.custom', 'uniform.default', 'datagrid' %>
-  <%= javascript_include_tag 'jquery-1.8.2', 'jquery-ui-1.9.0.custom', 'jquery.infieldlabel', 'jquery.uniform' %>
+  <%= javascript_include_tag 'jquery', 'jquery-ui-1.9.0.custom', 'application', 'jquery_ujs' %>
+  <%# javascript_include_tag :all %>
+
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
 </head>
@@ -14,11 +16,17 @@
       <li><%= link_to "Home", root_url %></li>
       <li><%= link_to "Events", events_path %></li>
       <li><%= link_to "Announcements", announcements_path %></li>
+      <li><%= link_to "Food", "#" %></li>
+      <li><%= link_to "Menus", "#" %></li>
+      <li><%= link_to "Classes", "#" %></li>
+
+
     </ul>
 
 
-    <div id="myform" >
-      <% if !logged_in? %>
+    <% if !logged_in? %>
+
+    <div id="login_form">
 
       <p>
         <%= form_tag sessions_path do -%>
@@ -27,17 +35,22 @@
         <!--  <label for="remember_me">Remember me:</label><%# check_box_tag 'remember_me' %> -->
         <!-- Forgot Password? <%# link_to 'Click Here', "#", { :class => 'resetpassword' } %> -->
       </p>
-      <% else %>
+
+    </div>
+
+    <% else %>
+
+    <div id="nav-account">
+
       <ul>
         <li><%= link_to 'My Account', "#" %></li>
         <li><%= link_to 'Logout', logout_path %></li>
       </ul>
-      <% end %>
-
-
-
 
     </div>
+
+    <% end %>
+
     <br style="clear: both;" />
   </div>
 

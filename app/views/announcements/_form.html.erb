@@ -1,3 +1,9 @@
+<script>
+  $(function() {
+    $( "#announcement_date" ).datepicker({ dateFormat: 'dd-mm-yy' });
+  });
+</script>
+
 <%= form_for @announcement do |f| %>
   <%= f.error_messages %>
   <p>
@@ -6,7 +12,7 @@
   </p>
   <p>
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.text_field :date %>
   </p>
   <p>
     <%= f.label :description %><br />
@@ -14,7 +20,7 @@
   </p>
   <p>
     <%= f.label :classification %><br />
-    <%= f.number_field :classification %>
+    <%= f.select :classification, Announcement::ANNOUNCEMENT_TYPES, :prompt => "Select an announcement type." %>
   </p>
   <p><%= f.submit %></p>
 <% end %>

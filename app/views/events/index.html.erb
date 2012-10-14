@@ -1,57 +1,33 @@
-<% title "Events" %>
+<script>
+$(function() {
+  $( "#tabs" ).tabs();
+});
+</script>
 
-<div id="events">
-  
-  <% if !@events.empty? %>
-    <h2>Upcoming Events</h2>
-    <table class   = "datagrid">
-      <thead class = "datagrid">
-        <% if can? :modify, Event %>
-        <th></th>
-        <% end %>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Photos</th>
-        <% if can? :modify, Event %>
-        <th></th>
-        <% end %>
-      </thead>
+<div id="page-content">
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">All Events</a></li>
+      <li><a href="#tabs-2">Upcoming Events</a></li>
+      <li><a href="#tabs-3">Past Events</a></li>
+      <% if can? :create, Event %>
 
-      <% @events.each do |event| %>
-      <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
-        <% if can? :modify, event %>
-          <td><%= link_to image_tag('icons/edit.png', :border => 0, :size => "20x20"), edit_event_path(event) %></td>
-        <% end %>
-        <td><%= link_to event.title, event %></td>
-        <td><%= event.location %></td>
-        <td>
-          <%= show_date(event.start_date, event.end_date) %>
-        </td>
-        <td>
-          <%= show_time(event.start_time, event.end_time) %>
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <% if can? :modify, event %>
-          <td><%= link_to image_tag('icons/trash.gif', :border => 0, :size => "20x20"), event, :confirm => 'Are you sure?', :method => :delete  %></td> 
-          <!-- Alternative method for deleting a record. -->
-          <!-- <td><%# button_to "Delete", event, :method => :delete, :class => :destroy, :confirm => "Are you sure?" %></td> -->
-        <% end %>
-      </tr>
+      <%= link_to(image_tag('icons/add.gif', :size => '20x20', :class => 'title-image'), new_event_path) %>
       <% end %>
-    </table>
-  <% else %>
-    
-    <p>There are no scheduled upcoming events.</p>
-    
-  <% end %>
-  
-  <br />
+    </ul>
+    <div id="tabs-1">   
+      <%= render :partial => 'all_events' %>
+    </div>
+    <div id="tabs-2">
+      <%= render :partial => 'upcoming_events' %>
+    </div>
+    <div id="tabs-3">
+      <%= render :partial => 'past_events' %>
+    </div>
+  </div>
+</div>
 
-  <!--- 
+    <!--- 
   <h2>Past Events</h2>
   <table class   = "datagrid">
     <thead class = "datagrid">
@@ -70,7 +46,4 @@
     </tr>
     <%# end %>
   </table> 
-  -->
-</div>
-
-<p><%= link_to "New Event", new_event_path %></p>
+-->

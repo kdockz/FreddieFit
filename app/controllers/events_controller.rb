@@ -2,8 +2,10 @@ class EventsController < ApplicationController
   before_filter :login_required, :except => [:show, :index]
   def index
     
+    @events = Event.all
+
     # Grab upcoming events only.
-    @events = Event.upcoming
+    @upcoming_events = Event.upcoming
     
     #Grab past events.
     @past_events = Event.past
@@ -14,7 +16,7 @@ class EventsController < ApplicationController
 
     # Store the current event in a session variable for registration purposes.
     @event = Event.find(params[:id])
-    session[:event] = @event
+    session[:event_id] = @event.id
         
     # Find all users registered for a particular event.
     @registered_users = Registration.for_event(@event.id)
@@ -27,6 +29,14 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(params[:event])
+
+    authorize! :create, @event
+    
+    # Sets hidden fields when user creates an event.
+    # Creator of the event is set to the current user, and the event is set to active.
+    @event.user_id = current_user.id
+    @event.active = true
+
     if @event.save
       redirect_to @event, :notice => "Successfully created event."
     else

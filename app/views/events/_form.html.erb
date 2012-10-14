@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :event_type %><br />
-    <%= f.number_field :event_type %>
+    <%= f.select :event_type, Event::EVENT_TYPES, :prompt => "Select an event type." %>
   </p>
 
   <div class="field">

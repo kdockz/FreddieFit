@@ -17,6 +17,10 @@ a {
   height: 0;
   overflow: hidden;
 }
+.title-image {
+  margin-top: 10px;
+  margin-left: 5px;
+}
 
 #container {
   width: 70%;
@@ -103,6 +107,8 @@ a {
   margin-left: 40px; /*margin between first menu item and left browser edge*/
   padding: 0;
   list-style: none;
+    display: inline;
+
 }
 
 .invertedshiftdown li{
@@ -145,23 +151,50 @@ a {
   color: white;
 }
 
-#myform{ /*CSS for sample search box. Remove if desired */
+#login_form { /*CSS for sample search box. Remove if desired */
   float: right;
-  margin: 0;
-  margin-top: 0px;
+  margin: 0px;
+  margin-top: -5px;
   padding: 0;
   font-size: 10px;
 }
 
-#myform .textinput{
+#login_form .textinput {
   width: 190px;
   border: 1px solid gray;
 }
 
-#myform .submit{
+#login_form .submit {
   font: normal 12px Verdana;
   height: 22px;
   border: 1px solid #D10000;
   background-color: black;
   color: white;
+}
+
+#nav-account {
+  float: right;
+  padding: 0;
+  font-size: 10px;
+}
+
+/* FORMS */
+
+#nav-header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  color: #000;
+}
+#nav-header h2 {
+  display: inline;
+  color: #000;
+}
+#nav-header .title {
+  display: inline;
+  padding-left: 7px;
+}
+
+.title {
+  vertical-align: middle;
 }
