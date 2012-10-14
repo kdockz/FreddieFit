@@ -47,6 +47,7 @@ gem 'nifty-generators'
 gem 'factory_girl'
 gem 'shoulda'
 gem 'cucumber'
+gem 'docsplit'
 gem 'cancan'
 gem 'minitest'
 gem "will_paginate"
@@ -59,6 +60,7 @@ gem "paperclip"
 gem "gcal4ruby"
 gem "validates_timeliness"
 gem "simplecov"
+gem 'pdf-reader'
 gem 'test-unit', :require => "test/unit"
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
