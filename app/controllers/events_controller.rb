@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_filter :login_required, :except => [:show, :index]
   def index
     
     # Grab upcoming events only.

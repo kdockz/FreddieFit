@@ -12,6 +12,8 @@ module ApplicationHelper
 			});", :type => 'text/javascript')
 		end
 
+		puts html
+
 		html
 
 	end

@@ -7,8 +7,8 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.date :start_date
       t.date :end_date
-      t.time :start_time
-      t.time :end_time
+      t.string :start_time
+      t.string :end_time
       t.integer :capacity
       t.integer :user_id
       t.integer :trainer_id

@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.date :date_of_birth
       t.string :email
       t.integer :access_level, :default => 10
-      t.boolean :active
+      t.boolean :active, :default => true
       t.string :password_hash
       t.string :password_salt
       t.timestamps

@@ -1,13 +1,43 @@
-<%= form_for @user do |f| %>
+<script>
+$(function()
+  $("select, input, button, textarea").uniform();
+});
+</script>
+
+  <%= form_for @user do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :username %><br />
-    <%= f.text_field :username %>
+    <%= f.text_field :username, :size => 15 %>
   </p>
   <p>
     <%= f.label :email, "Email Address" %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :size => 20 %>
   </p>
+
+ <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+ </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+ </p>
+
+ <p>
+    <%= f.label :date_of_birth %><br />
+    <%= f.text_field :date_of_birth, :size => 12 %>
+ </p>
+
+ <p>
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight, :size => 7 %>
+  </p>
+  <p>
+  <%= f.label :height %><br />
+  <%= f.text_field :height, :size => 7 %>
+ </p>
+
   <p>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
@@ -17,4 +47,4 @@
     <%= f.password_field :password_confirmation %>
   </p>
   <p><%= f.submit (@user.new_record? ? "Sign up" : "Update") %></p>
-<% end %>
+  <% end %>

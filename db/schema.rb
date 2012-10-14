@@ -30,12 +30,13 @@ ActiveRecord::Schema.define(:version => 20121013215608) do
     t.string   "location"
     t.date     "start_date"
     t.date     "end_date"
-    t.time     "start_time"
-    t.time     "end_time"
+    t.string   "start_time"
+    t.string   "end_time"
     t.integer  "capacity"
     t.integer  "user_id"
     t.integer  "trainer_id"
-    t.integer  "registration"
+    t.boolean  "registration"
+    t.boolean  "active"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
@@ -55,11 +56,12 @@ ActiveRecord::Schema.define(:version => 20121013215608) do
     t.string   "height"
     t.date     "date_of_birth"
     t.string   "email"
-    t.integer  "access_level"
+    t.integer  "access_level",  :default => 10
+    t.boolean  "active",        :default => true
     t.string   "password_hash"
     t.string   "password_salt"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
 end

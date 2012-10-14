@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  attr_accessible :title, :location, :description, :capacity, :user_id, :start_date, :end_date, :start_time, :end_time
+  attr_accessible :title, :location, :description, :capacity, :user_id, :start_date, :end_date, :start_time, :end_time, :event_type, :registration
   
   # Relationships
   has_many :registrations
@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
   # STATUS = [['Upcoming', 0], ['Ongoing', 1], ['Complete', 2]]
     
   # Validations
-  validates :name, :presence => true
+  validates :title, :presence => true
   validates :location, :presence => true
   validates :description, :presence => true
   validates :registration, :inclusion => { :in => [true, false] }
