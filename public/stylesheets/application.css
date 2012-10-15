@@ -1,5 +1,5 @@
 body {
-  background-color: #4B7399;
+  background-color: #999999;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -29,6 +29,15 @@ a {
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 20px;
+
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-bottom-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-right-radius: 10px;
 }
 
 #flash_message {
@@ -96,7 +105,7 @@ a {
 .invertedshiftdown{
   padding: 0;
   width: 100%;
-  border-top: 5px solid #D10000; /*Red color theme*/
+  border-top: 5px solid #8A0808; /*Red color theme*/
   background: transparent;
   voice-family: "\"}\"";
   voice-family: inherit;
@@ -138,14 +147,14 @@ a {
 }
 
 .invertedshiftdown a:hover{
-  background-color: #D10000; /*Red color theme*/
+  background-color: #8A0808; /*Red color theme*/
   padding-top: 9px; /*Flip default padding-top value with padding-bottom */
   padding-bottom: 5px; /*Flip default padding-bottom value with padding-top*/
   color: white;
 }
 
 .invertedshiftdown .current a{ /** currently selected menu item **/
-  background-color: #D10000; /*Red color theme*/
+  background-color: #8A0808; /*Red color theme*/
   padding-top: 9px; /*Flip default padding-top value with padding-bottom */
   padding-bottom: 5px; /*Flip default padding-bottom value with padding-top*/
   color: white;
@@ -167,7 +176,7 @@ a {
 #login_form .submit {
   font: normal 12px Verdana;
   height: 22px;
-  border: 1px solid #D10000;
+  border: 1px solid #8A0808;
   background-color: black;
   color: white;
 }
