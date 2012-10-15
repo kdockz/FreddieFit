@@ -198,3 +198,7 @@ a {
 .title {
   vertical-align: middle;
 }
+
+#user-listing {
+  margin-left: 50px;
+}

@@ -31,7 +31,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      #can :modify, Registration, :user_id => user.id
+      can :modify, Registration, :user_id => user.id
       can :modify, User, :id => user.id
     end
     
