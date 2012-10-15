@@ -5,7 +5,7 @@ ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :user_name            => "k.dockz@gmail.com",
-  :password             => "Fragwars#32goo",
+  :password             => "Fragwars#32google",
   :authentication       => 'plain',
   :enable_starttls_auto => true
 }
