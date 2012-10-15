@@ -18,7 +18,7 @@
       <li><%= link_to "Announcements", announcements_path %></li>
       <li><%= link_to "Food", foods_path %></li>
       <li><%= link_to "Menus", "#" %></li>
-      <li><%= link_to "Classes", "#" %></li>
+      <li><%= link_to "Classes", show_classes_path %></li>
 
 
     </ul>
@@ -43,6 +43,7 @@
     <div id="nav-account">
 
       <ul>
+        <li>Welcome, <%= current_user.nice_name %></li>
         <li><%= link_to 'My Account', edit_current_user_path %></li>
         <li><%= link_to 'Logout', logout_path %></li>
       </ul>

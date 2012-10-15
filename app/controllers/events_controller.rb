@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :login_required, :except => [:show, :index]
+  before_filter :login_required, :except => [:show, :index, :show_classes]
 
   def index
     
@@ -22,6 +22,10 @@ class EventsController < ApplicationController
     # Find all users registered for a particular event.
     @registered_users = Registration.for_event(@event.id)
     
+  end
+
+  def show_classes
+        @events = Event.classes.upcoming
   end
 
   def new

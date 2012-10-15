@@ -1,50 +1,75 @@
-<div id="nav-header">
-<h2>My Registrations</h2>
-</div>
-<div id="page-content">
-<% unless @registrations.nil? || @registrations.empty? %>
-<table>
-	<% @registrations.each do |registration| %>
-		<tr>
-			<td><%=	Event.find(registration.event_id).title %></title>
-			<td><%= button_to "Unregister", { :controller => 'events', :action => 'unregister', :registration_id => registration.id }, :class => :destroy, :confirm => "Are you sure?" %></td>
-		</tr>
-	<% end %>
+<table style="padding: 20px">
+	<tr>
+		<td>
+
+			<div id="nav-header">
+				<h2>My Registrations</h2>
+			</div>
+			<div id="page-content">
+				<% unless @registrations.nil? || @registrations.empty? %>
+				<table>
+					<% @registrations.each do |registration| %>
+					<tr>
+						<td><%=	Event.find(registration.event_id).title %></td>
+						<td><%= button_to "Unregister", { :controller => 'events', :action => 'unregister', :registration_id => registration.id }, :class => :destroy, :confirm => "Are you sure?" %></td>
+					</tr>
+					<% end %>
+				</table>
+				<% else %>
+				<p>You are not registered for any upcoming events.</p>
+				<% end %>
+
+
+				<div id="nav-header">
+					<h2>Foods that I've Eaten</h2>
+				</div>
+				<% unless @foods.nil? || @foods.empty? %>
+				<table>
+					<% @foods.each do |food| %>
+					<tr>
+						<td><%=	food.food.name %></td>
+					</tr>
+					<% end %>
+				</table>
+				<% else %>
+				<p>I have not eaten any foods recently.</p>
+				<% end %>
+
+				<div id="nav-header">
+					<h2>Favorite Foods</h2>
+				</div>
+
+				<% unless @favorites.nil? || @favorites.empty? %>
+				<table>
+					<% @favorites.each do |favorite| %>
+					<tr>
+						<td><%=	favorite.food.name %></td>
+						<td><%= link_to image_tag('icons/unstar.gif', :border => 0, :size => "20x20"), { :controller => 'foods', :action => 'remove_favorite', :favorite_id => favorite.id }, :class => :destroy %></td>
+					</tr>
+					<% end %>
+				</table>
+				<% else %>
+				<p>I don't have any foods marked as favorites.</p>
+				<% end %>
+			</div>
+		</td>
+		<td style="padding-left: 75px">			
+			<div id="nav-header">
+				<h2>My Classes</h2>
+			</div>
+			<% unless @classes.nil? || @classes.empty? %>
+			<table>
+				<% @classes.each do |c| %>
+
+				<tr>
+					<td><%=	Event.find(c.event_id).title %></td>
+					<td><%= button_to "Unregister", { :controller => 'events', :action => 'unregister', :registration_id => c.id }, :class => :destroy, :confirm => "Are you sure?" %></td>
+				</tr>
+				<% end %>
+			</table>
+			<% else %>
+			<p>You are not registered for any upcoming classes.</p>
+			<% end %>
+		</td>
+	</tr>
 </table>
-<% else %>
-<p>You are not registered for any upcoming events.</p>
-<% end %>
-
-
-<div id="nav-header">
-<h2>Foods that I've Eaten</h2>
-</div>
-<% unless @foods.nil? || @foods.empty? %>
-<table>
-	<% @foods.each do |food| %>
-		<tr>
-			<td><%=	food.food.name %></title>
-		</tr>
-	<% end %>
-</table>
-<% else %>
-<p>I have not eaten any foods recently.</p>
-<% end %>
-
-<div id="nav-header">
-<h2>Favorite Foods</h2>
-</div>
-
-<% unless @favorites.nil? || @favorites.empty? %>
-<table>
-	<% @favorites.each do |favorite| %>
-		<tr>
-			<td><%=	favorite.food.name %></title>
-			<td><%= link_to image_tag('icons/unstar.gif', :border => 0, :size => "20x20"), { :controller => 'foods', :action => 'remove_favorite', :favorite_id => @favorite.id }, :class => :destroy %></td>
-		</tr>
-	<% end %>
-</table>
-<% else %>
-<p>I don't have any foods mark as favorites.</p>
-<% end %>
-</div>

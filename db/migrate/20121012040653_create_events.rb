@@ -12,7 +12,6 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :reserved
       t.integer :capacity
       t.integer :user_id
-      t.integer :trainer_id
       t.boolean :registration
       t.boolean :active
       t.timestamps

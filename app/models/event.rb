@@ -1,9 +1,10 @@
 class Event < ActiveRecord::Base
 
-  attr_accessible :title, :location, :description, :capacity, :user_id, :start_date, :end_date, :start_time, :end_time, :event_type, :registration
+  attr_accessible :title, :location, :description, :reserved, :capacity, :user_id, :start_date, :end_date, :start_time, :end_time, :event_type, :registration
   
   # Relationships
   has_many :registrations
+  belongs_to :registration
   has_many :users, :through => :registrations
   belongs_to :user
   
@@ -19,6 +20,7 @@ class Event < ActiveRecord::Base
   # validates :user_id, :inclusion => { :in => User.all.map{ |u| u.id } }
   
   # Scopes
+  scope :classes, where('event_type = ?', 0)
   scope :upcoming, where('start_date >= ?', Date.today)
   scope :ongoing, where('status = ?', 1)
   scope :completed, where('status = ?', 2)

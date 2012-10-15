@@ -15,8 +15,10 @@ FreddieFit::Application.routes.draw do
 
   match 'login' => 'sessions#new', :as => :login
 
-  match 'event/register' => 'events#register', :as => :event_registration  
+  match 'event/register' => 'events#register', :as => :register_for_event  
   match 'event/unregister' => 'events#unregister', :as => :unregister_for_event
+
+  match 'show_classes' => 'events#show_classes', :as => :show_classes
 
   match 'food/favorites/add' => 'foods#add_favorite', :as => :add_favorite_food
   match 'food/favorites/remove' => 'foods#remove_favorite', :as => :remove_favorite_food

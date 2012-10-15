@@ -6,8 +6,8 @@ class FoodsController < ApplicationController
   def show
     @food = Food.find(params[:id])
     session[:food_id] = @food.id
-    @favorite = FavoriteFood.where(:user_id => current_user.id, :food_id => @food.id).first
-    @ef = UserFood.where(:user_id => current_user.id, :food_id => @food.id).first
+    @favorite = FavoriteFood.where(:user_id => session[:user_id], :food_id => @food.id).first
+    @ef = UserFood.where(:user_id => session[:user_id], :food_id => @food.id).first
   end
 
   def new

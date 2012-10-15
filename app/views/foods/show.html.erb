@@ -1,6 +1,6 @@
 <% if !@favorite.nil? && can?(:modify, @favorite) %>
 <%= link_to image_tag('icons/unstar.gif', :border => 0, :size => "20x20"), { :controller => 'foods', :action => 'remove_favorite', :favorite_id => @favorite.id }, :class => :destroy %>
-<% else %>
+<% elsif logged_in? %>
 <%= link_to image_tag('icons/star.gif', :border => 0, :size => "20x20"), { :controller => 'foods', :action => 'add_favorite', :food_id => @food.id } %>
 <% end %>
 <h2 style="display: inline;"><%= @food.name %></h2> <span style="display: inline;"><font size="1"><%= @food.show_food_type %></font></span>
@@ -15,13 +15,13 @@
 </p>
 <p>
   <strong>Cost:</strong>
-  <%= @food.cost %>
+  <%= number_to_currency(@food.cost)%>
 </p>
 
 <div id="food-status">
 <% if !@ef.nil? && can?(:modify, @ef) %>
 <%= button_to "Oops! I didn't eat this", { :controller => 'foods', :action => 'unmark_as_eaten', :ef_id => @ef.id }, :class => :destroy %>
-<% else %>
+<% elsif logged_in? %>
 <%= button_to "I ate this", { :controller => 'foods', :action => 'mark_as_eaten', :food_id => @food.id } %>
 <% end %>
 </div>
