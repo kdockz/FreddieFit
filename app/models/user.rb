@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password
   validates_length_of :password, :minimum => 4, :allow_blank => true
+  #validates :date_of_birth, :timeliness => {:on_or_before => lambda { Date.current }, :type => :date}
+
 
   has_many :registrations
   has_many :events, :through => :registrations
