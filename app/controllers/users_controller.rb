@@ -28,4 +28,5 @@ class UsersController < ApplicationController
       render :action => 'edit'
     end
   end
+
 end

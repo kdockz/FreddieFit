@@ -1,16 +1,13 @@
-<% title "Food" %>
+<% if !@favorite.nil? && can?(:modify, @favorite) %>
+<%= link_to image_tag('icons/unstar.gif', :border => 0, :size => "20x20"), { :controller => 'foods', :action => 'remove_favorite', :favorite_id => @favorite.id }, :class => :destroy %>
+<% else %>
+<%= link_to image_tag('icons/star.gif', :border => 0, :size => "20x20"), { :controller => 'foods', :action => 'add_favorite', :food_id => @food.id } %>
+<% end %>
+<h2 style="display: inline;"><%= @food.name %></h2> <span style="display: inline;"><font size="1"><%= @food.show_food_type %></font></span>
+
 
 <p>
-  <strong>Name:</strong>
-  <%= @food.name %>
-</p>
-<p>
-  <strong>Description:</strong>
   <%= @food.description %>
-</p>
-<p>
-  <strong>Food Type:</strong>
-  <%= @food.food_type %>
 </p>
 <p>
   <strong>Calories:</strong>
@@ -21,8 +18,10 @@
   <%= @food.cost %>
 </p>
 
-<p>
-  <%= link_to "Edit", edit_food_path(@food) %> |
-  <%= link_to "Destroy", @food, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", foods_path %>
-</p>
+<div id="food-status">
+<% if !@ef.nil? && can?(:modify, @ef) %>
+<%= button_to "Oops! I didn't eat this", { :controller => 'foods', :action => 'unmark_as_eaten', :ef_id => @ef.id }, :class => :destroy %>
+<% else %>
+<%= button_to "I ate this", { :controller => 'foods', :action => 'mark_as_eaten', :food_id => @food.id } %>
+<% end %>
+</div>

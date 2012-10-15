@@ -32,6 +32,8 @@ class Ability
     else
       can :read, :all
       can :modify, Registration, :user_id => user.id
+      can :modify, FavoriteFood, :user_id => user.id
+      can :modify, UserFood, :user_id => user.id
       can :modify, User, :id => user.id
     end
     
