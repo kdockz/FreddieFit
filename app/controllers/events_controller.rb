@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_filter :login_required, :except => [:show, :index]
+
   def index
     
     @events = Event.all
@@ -42,6 +43,33 @@ class EventsController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+
+  def register
+
+    @registration = Registration.new
+
+    @registration.event_id = session[:event_id]
+    @registration.user_id = session[:user_id]
+
+    if @registration.save
+      redirect_to Event.find(session[:event_id]), :notice => "You have successfully registered for this event."
+    else
+      redirect_to Event.find(session[:event_id]), :alert => "Event registration failed, please contact an administrator."
+    end
+
+  end
+
+  def unregister
+
+    @registration = Registration.find(params[:registration_id])
+
+    if @registration.destroy
+      redirect_to Event.find(session[:event_id]), :notice => "You have unregistered for this event."
+    else
+      redirect_to Event.find(session[:event_id]), :alert => "Unable to remove you from the registration list."
+    end
+
   end
 
   def edit

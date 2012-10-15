@@ -1,49 +1,113 @@
 <div id="nav-header">
-<h2>Details for <em><%= @event.title %></em>:</h2>
-<% if can? :modify, @event %>
-<h3 class="title"><%= link_to(image_tag('icons/add.gif', :size => '20x20'), edit_event_path(@event)) %></h3>
-<% end %>
+  <h2>Details for <em><%= @event.title %></em>:</h2>
+  <% if can? :modify, @event %>
+  <h3 class="title"><%= link_to(image_tag('icons/add.gif', :size => '20x20'), edit_event_path(@event)) %></h3>
+  <% end %>
 </div>
 <table>
   <tr>
     <td>
       <div id="event-details-important">
-      <h3 id="event-description"><%= @event.description %></h3>
-      <h3 class="event-info"><em>Important Information:</em></h3>
-      <p>
-        This event is scheduled for <strong><%= show_date(@event.start_date, @event.end_date) %></strong>.
-        <br />
-        <br />
-        The tentative time is <strong><%= show_time(@event.start_time, @event.end_time) %></strong>.
-        <br />
-        <br />
-        It will take place at <strong><%= @event.location %></strong>.
-      </p>
+        <h3 id="event-description"><%= @event.description %></h3>
+        <h3 class="event-info"><em>Important Information:</em></h3>
+        <p>
+          This event is scheduled for <strong><%= show_date(@event.start_date, @event.end_date) %></strong>.
+          <br />
+          <br />
+          The tentative time is <strong><%= show_time(@event.start_time, @event.end_time) %></strong>.
+          <br />
+          <br />
+          It will take place at <strong><%= @event.location %></strong>.
+        </p>
       </div>
 
       <div id="event-details-other">
-      <% if logged_in? && current_user.admin? %>
-      <h3 class="event-info"><em>Other Information:</em></h3>
-      <p>
-        <b>User:</b>
-        <%= @event.user.nice_name %>
-      </p>
-      <% if can? :modify, Event %>
-      <p>
-        <b>Active:</b>
-        <%= @event.active %>
-      </p>
+        <% if logged_in? && current_user.admin? %>
+        <h3 class="event-info"><em>Other Information:</em></h3>
+        <p>
+          <b>User:</b>
+          <%= @event.user.nice_name %>
+        </p>
+        <% if can? :modify, Event %>
+        <p>
+          <b>Active:</b>
+          <%= @event.active %>
+        </p>
 
-      <% end %>
-      <% end %>
-
-
-      <% if can? :modify, @event %>
-        <%= link_to 'Edit', edit_event_path(@event) %> |
-        <%= link_to 'Back', events_path %>
-      <% end %>
+        <% end %>
+        <% end %>
+      <%# if can? :modify, @event %>
+        <%# link_to 'Edit', edit_event_path(@event) %>
+        <%# link_to 'Back', events_path %>
+      <%# end %>
       </div>
+
+      <% if logged_in? %>
+      <% if @event.public? %>
+      <table>
+        <tr>
+          <td><%= button_to "Register", { :controller => 'events', :action => 'register' }, :disabled => true %></td>
+          <td><strong>This event is public and does not require registration.</strong></td>
+
+        </tr>
+      </table>
+      <% elsif !@event.free_space?  %>
+      <table>
+        <tr>
+          <td><%= button_to "Register", { :controller => 'events', :action => 'register' }, :disabled => true %></td>
+          <td><strong>This event is full.</strong></td>
+        </tr>
+      </table>
+      <% elsif @event.registration == false %>
+      <table>
+        <tr>
+          <td><%= button_to "Register", { :controller => 'events', :action => 'register' }, :disabled => true %></td>
+          <td><strong>Registration for this event is closed.</strong></td>        
+        </tr>
+      </table>
+      <% elsif check_member_registration(@event, current_user) %>
+      <table>
+        <tr>
+          <td><%= button_to "Register", { :controller => 'events', :action => 'register' }, :disabled => true %></td>
+          <td><strong>You are already registered for this event.</strong></td>
+        </tr>
+      </table>
+      <% else %>
+      <p><%= button_to "Register", { :controller => 'events', :action => 'register' } %></p>
+      <% end %>
+      <% end %>
     </td>
 
+    <td>
+      <% unless @registered_users.empty? %>
+      <table id="user-listing" class="datagrid">
+        <thead class="datagrid">
+          <th>Registered Users</th>
+          <% if can? :modify, Registration %>
+          <th></th>
+          <% end %>
+        </thead>
+
+        <% @registered_users.each do |ru| %>
+        <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+          <% if (logged_in? && ru.user.nice_name == current_user.nice_name) %>
+          <td><strong><%= ru.user.nice_name %></strong> (You)</td>
+          <% else %>
+          <td><%= ru.user.nice_name %></td>
+          <% end %>
+          <td>
+            <% if can? :modify, ru %>
+            <%= button_to "Unregister", { :controller => 'events', :action => 'unregister', :registration_id => ru.id }, :class => :destroy, :confirm => "Are you sure?" %>
+            <% else  %>
+            &nbsp;
+            <% end %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+      <% else %>
+      <h2 id="user-listing"><em>There are no users registered for this event.</em></h2>
+      <% end %>
+    </td>
   </tr>
 </table>

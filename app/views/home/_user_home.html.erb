@@ -1,0 +1,17 @@
+<div id="nav-header">
+<h1>My Registrations</h1>
+</div>
+<div id="page-content">
+<% unless @registrations.nil? || @registrations.empty? %>
+<table>
+	<% @registrations.each do |registration| %>
+		<tr>
+			<td><%=	Event.find(registration.event_id).title %></title>
+			<td><%= button_to "Unregister", { :controller => 'events', :action => 'unregister', :registration_id => registration.id }, :class => :destroy, :confirm => "Are you sure?" %></td>
+		</tr>
+	<% end %>
+</table>
+<% else %>
+<h2>You are not registered for any upcoming events.</h2>
+<% end %>
+</div>

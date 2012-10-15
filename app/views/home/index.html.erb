@@ -1,1 +1,7 @@
-<p>Welcome to FreddieFit!</p>
+<% if logged_in? && current_user.admin? %>
+      <%= render :partial => 'admin_home' %>
+<% elsif logged_in? %>
+      <%= render :partial => 'user_home' %>
+<% else %>
+      <%= render :partial => 'guest_home' %>
+<% end %>

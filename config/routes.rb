@@ -1,4 +1,6 @@
 FreddieFit::Application.routes.draw do
+  resources :foods
+
   get "home/index"
 
   resources :announcements
@@ -12,6 +14,9 @@ FreddieFit::Application.routes.draw do
   match 'logout' => 'sessions#destroy', :as => :logout
 
   match 'login' => 'sessions#new', :as => :login
+
+  match 'event/register' => 'events#register', :as => :event_registration
+  match 'event/unregister' => 'events#unregister', :as => :unregister_for_event
 
   resources :sessions
 

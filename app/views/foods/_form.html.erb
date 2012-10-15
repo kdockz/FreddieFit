@@ -1,0 +1,24 @@
+<%= form_for @food do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :food_type %><br />
+    <%= f.number_field :food_type %>
+  </p>
+  <p>
+    <%= f.label :calories %><br />
+    <%= f.number_field :calories %>
+  </p>
+  <p>
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

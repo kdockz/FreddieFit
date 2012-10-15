@@ -10,11 +10,9 @@ module ApplicationHelper
 			html << content_tag(:script, "$(document).ready(function() { 
 				$(\"#flash-message\").fadeOut(#{options[:fade]*1000}, function() { 
 					// Animation complete. 
-				}); 
+					}); 
 			});".html_safe, :type => 'text/javascript')
 		end
-
-		puts html
 
 		html
 
@@ -35,4 +33,16 @@ module ApplicationHelper
 
 	end
 
+	def check_member_registration(event, user)
+
+		return true if Registration.where('event_id = ? and user_id = ?', event.id, user.id).first
+		false
+
+	end
+
+	def get_member_registration(event, user)
+
+		return Registration.where('event_id = ? and user_id = ?', event.id, user.id).first
+
+	end
 end

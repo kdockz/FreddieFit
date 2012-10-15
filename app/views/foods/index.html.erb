@@ -1,0 +1,25 @@
+<% title "Foods" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Food Type</th>
+    <th>Calories</th>
+    <th>Cost</th>
+  </tr>
+  <% for food in @foods %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.description %></td>
+      <td><%= food.food_type %></td>
+      <td><%= food.calories %></td>
+      <td><%= food.cost %></td>
+      <td><%= link_to "Show", food %></td>
+      <td><%= link_to "Edit", edit_food_path(food) %></td>
+      <td><%= link_to "Destroy", food, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Food", new_food_path %></p>
