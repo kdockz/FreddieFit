@@ -4,7 +4,6 @@ class Event < ActiveRecord::Base
   
   # Relationships
   has_many :registrations
-  belongs_to :registration
   has_many :users, :through => :registrations
   belongs_to :user
   
