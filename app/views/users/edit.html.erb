@@ -1,3 +1,25 @@
 <% title "Update Profile" %>
 
-<%= render 'form' %>
+<%= form_for @user do |f| %>
+<%= f.error_messages %>
+<p>
+	<%= f.label :email, "Email Address" %>:&nbsp;&nbsp;<%= f.text_field :email, :size => 30 %>
+</p>
+
+<p>
+	<%= f.label :first_name %>:&nbsp;&nbsp;<%= f.text_field :first_name, :size => 15 %>
+</p>
+<p>
+	<%= f.label :last_name %>:&nbsp;&nbsp;<%= f.text_field :last_name, :size => 15 %>
+</p>
+
+<p>
+	<%= f.label :date_of_birth %>:&nbsp;&nbsp;<%= f.text_field :date_of_birth, :size => 12 %>
+</p>
+
+<p>
+	<%= f.label :weight %>:&nbsp;&nbsp;<%= f.text_field :weight, :size => 7 %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.label :height %>:&nbsp;&nbsp;<%= f.text_field :height, :size => 7 %>
+</p>
+
+<p><%= f.submit "Update" %></p>
+<% end %>
