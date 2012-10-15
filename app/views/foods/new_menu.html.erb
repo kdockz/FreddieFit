@@ -1,0 +1,9 @@
+<% title 'Create a menu item' %>
+
+  <div class="field">
+    <%= f.label :food %>:  <%= f.collection_select :food_id, Food.all, :id, :name, :prompt => "Please select a food." %>
+  </div>
+
+  <div class="field">
+      <%= f.label :location %>:  <%= f.select :location_id, Food::LOCATIONS, :prompt => "Where at?" %>
+   </div>

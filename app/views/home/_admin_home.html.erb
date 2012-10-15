@@ -1,5 +1,5 @@
 <div id="nav-header">
-<h1>My Registrations</h1>
+<h2>My Registrations</h2>
 </div>
 <div id="page-content">
 <% unless @registrations.nil? || @registrations.empty? %>
@@ -12,6 +12,39 @@
 	<% end %>
 </table>
 <% else %>
-<h2>You are not registered for any upcoming events.</h2>
+<p>You are not registered for any upcoming events.</p>
+<% end %>
+<br />
+<br />
+<div id="nav-header">
+<h2>Foods that I've Eaten</h2>
+</div>
+<% unless @foods.nil? || @foods.empty? %>
+<table>
+	<% @foods.each do |food| %>
+		<tr>
+			<td><%=	food.food.name %></title>
+		</tr>
+	<% end %>
+</table>
+<% else %>
+<p>I have not eaten any foods recently.</p>
+<% end %>
+<br />
+<br />
+<div id="nav-header">
+<h2>Favorite Foods</h2>
+</div>
+<% unless @favorites.nil? || @favorites.empty? %>
+<table>
+	<% @favorites.each do |favorite| %>
+		<tr>
+			<td><%=	favorite.food.name %></title>
+			<td><%= link_to image_tag('icons/unstar.gif', :border => 0, :size => "20x20"), { :controller => 'foods', :action => 'remove_favorite', :favorite_id => favorite.id }, :class => :destroy %></td>
+		</tr>
+	<% end %>
+</table>
+<% else %>
+<p>I don't have any foods mark as favorites.</p>
 <% end %>
 </div>

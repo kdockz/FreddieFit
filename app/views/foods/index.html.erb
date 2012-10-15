@@ -1,25 +1,45 @@
 <% title "Foods" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Food Type</th>
-    <th>Calories</th>
-    <th>Cost</th>
-  </tr>
-  <% for food in @foods %>
-    <tr>
-      <td><%= food.name %></td>
-      <td><%= food.description %></td>
-      <td><%= food.food_type %></td>
+<div id="foods">
+
+  <% if !@foods.empty? %>
+  <table class   = "datagrid">
+    <thead class = "datagrid">
+      <% if can? :modify, Food %>
+      <th></th>
+      <% end %>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Calories</th>
+      <th>Cost</th>
+      <% if can? :modify, Food %>
+      <th></th>
+      <% end %>
+    </thead>
+
+    <% @foods.each do |food| %>
+    <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+      <% if can? :modify, food %>
+      <td><%= link_to image_tag('icons/edit.png', :border => 0, :size => "20x20"), edit_food_path(food) %></td>
+      <% end %>
+      <td><%= link_to food.name, food %></td>
+      <td><%= food.show_food_type %></td>
       <td><%= food.calories %></td>
       <td><%= food.cost %></td>
-      <td><%= link_to "Show", food %></td>
-      <td><%= link_to "Edit", edit_food_path(food) %></td>
-      <td><%= link_to "Destroy", food, :confirm => 'Are you sure?', :method => :delete %></td>
+      <% if can? :modify, Food %>
+      <td><%= link_to image_tag('icons/trash.gif', :border => 0, :size => "20x20"), food, :confirm => 'Are you sure?', :method => :delete  %></td> 
+      <% end %>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
+  <% else %>
 
-<p><%= link_to "New Food", new_food_path %></p>
+  <p>
+    There are no created foods. 
+    <% if can? :create, Food %>
+    Create one <%= link_to "here", new_food_path %>.
+    <% end %>
+  </p>
+
+  <% end %>
+</div>

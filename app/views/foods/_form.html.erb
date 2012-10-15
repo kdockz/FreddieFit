@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= f.label :food_type %><br />
-    <%= f.number_field :food_type %>
+    <%= f.select :food_type, Food::FOOD_TYPES, :prompt => "What type?" %>
   </p>
   <p>
     <%= f.label :calories %><br />

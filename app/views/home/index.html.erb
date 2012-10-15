@@ -1,7 +1,7 @@
-<% if logged_in? && current_user.admin? %>
-      <%= render :partial => 'admin_home' %>
-<% elsif logged_in? %>
-      <%= render :partial => 'user_home' %>
+<% if !logged_in? %>
+<%= render :partial => 'guest_home' %>
+<% elsif logged_in? && current_user.admin? %>
+<%= render :partial => 'admin_home' %>
 <% else %>
-      <%= render :partial => 'guest_home' %>
+<%= render :partial => 'user_home' %>
 <% end %>
