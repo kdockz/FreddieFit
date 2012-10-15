@@ -1,5 +1,10 @@
-<% title "Foods" %>
-
+<div id="nav-header">
+  <br />
+  <h2>Foods</h2> 
+  <% if can? :create, Food%>
+    <h3 class="title"><%= link_to(image_tag('icons/add.gif', :size => '20x20'), new_food_path) %></h3>
+  <% end %>
+</div>
 <div id="foods">
 
   <% if !@foods.empty? %>
