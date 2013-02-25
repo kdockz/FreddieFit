@@ -5,7 +5,7 @@
 
 table.datagrid {   
 	font-family: Arial, Verdana, Helvetica, sans-serif;
-	color: #000000;
+	color: #FFFFFF;
 	text-align: left;
 	border-collapse: collapse;
   	margin-left: 15px;
@@ -56,10 +56,15 @@ thead.datagrid th:hover {
 .dg_list_line_odd {
 	font: 90% Verdana, Arial, Helvetica, sans-serif;
 	color: #000000;
+	background-color: #FFFFFF;
 	text-align: left;
 	vertical-align: top;
 	line-height: 2.5;
 	padding: 3px;
+}
+.dg_list_line_odd a {
+	font: 90% Verdana, Arial, Helvetica, sans-serif;
+	color: #000000;
 }
 .dg_list_line_even {
 	font: 90% Verdana, Arial, Helvetica, sans-serif;
@@ -91,19 +96,21 @@ thead.datagrid th:hover {
 .dg_list_line_odd:hover {
 	background-color: #FFFFFF;
 	color: #D97600;
+	font-weight: bold;
 }
 .dg_list_line_odd:hover a {
 	background-color: #FFFFFF;
-	color: #000000;
+	color: #D97600;
 	text-decoration: none;
 }
 .dg_list_line_even:hover {
 	background-color: #FFFFFF;
 	color: #D97600;
+	font-weight: bold;
 }
 .dg_list_line_even:hover a {
 	background-color: #FFFFFF;
-	color: #000000;
+	color: #D97600;
 	text-decoration: none;
 }
 
