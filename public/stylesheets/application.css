@@ -1,5 +1,5 @@
 body {
-  background-color: #999999;
+  background-color: #FFFFFF;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -25,10 +25,19 @@ a {
 #container {
   width: 70%;
   margin: 0 auto;
-  background-color: #FFF;
+  /* background-color: #03528e; */
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 20px;
+
+  color: #FFFFFF;
+
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background: linear-gradient(to bottom, #0475CB 0%, #03528E 100%) repeat scroll 0 0 transparent;
+  border-color: #0475CB #0475CB #03528E;
 
   -moz-border-radius-bottomleft: 10px;
   border-bottom-left-radius: 10px;
@@ -105,7 +114,7 @@ a {
 .invertedshiftdown{
   padding: 0;
   width: 100%;
-  border-top: 5px solid #8A0808; /*Red color theme*/
+  border-top: 5px solid #77B021; /*Red color theme*/
   background: transparent;
   voice-family: "\"}\"";
   voice-family: inherit;
@@ -116,7 +125,7 @@ a {
   margin-left: 40px; /*margin between first menu item and left browser edge*/
   padding: 0;
   list-style: none;
-    display: inline;
+  display: inline;
 
 }
 
@@ -124,19 +133,29 @@ a {
   display: inline;
   margin: 0 2px 0 0;
   padding: 0;
-  text-transform:uppercase;
+  /* text-transform:uppercase; */
+
 }
 
 .invertedshiftdown a{
   float: left;
   display: block;
-  font: bold 12px Arial;
-  color: black;
+  font-family: Arial;
+  font-size: 14.2px;
+  font-weight: bold;
+  color: #FFFFFF;
   text-decoration: none;
   margin: 0 1px 0 0; /*Margin between each menu item*/
   padding: 5px 10px 9px 10px; /*Padding within each menu item*/
-  /* background-color: white; /*Default menu color*/
 
+  /* background-color: #77B021; /*Default menu color*/
+  background: rgb(119,176,33); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(119,176,33,1) 0%, rgba(103,155,29,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(119,176,33,1)), color-stop(100%,rgba(103,155,29,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* IE10+ */
+  background: linear-gradient(top, rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* W3C */ 
 /*BELOW 4 LINES add rounded bottom corners to each menu item.
   ONLY WORKS IN FIREFOX AND FUTURE CSS3 CAPABLE BROWSERS
   REMOVE IF DESIRED*/
@@ -147,17 +166,34 @@ a {
 }
 
 .invertedshiftdown a:hover{
-  background-color: #8A0808; /*Red color theme*/
+  background: #FFFFFF;
+  background-color: #FFFFFF; /*Red color theme*/
+  padding-top: 9px; /*Flip default padding-top value with padding-bottom */
+  padding-bottom: 5px; /*Flip default padding-bottom value with padding-top*/
+  color: #D97600;
+
+  border-left: 1px solid #77B021;
+  border-bottom: 1px solid #77B021;
+  border-right: 1px solid #77B021;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.invertedshiftdown .current a{ /** currently selected menu item **/
+  background-color: #77B021; /*Red color theme*/
   padding-top: 9px; /*Flip default padding-top value with padding-bottom */
   padding-bottom: 5px; /*Flip default padding-bottom value with padding-top*/
   color: white;
 }
 
-.invertedshiftdown .current a{ /** currently selected menu item **/
-  background-color: #8A0808; /*Red color theme*/
-  padding-top: 9px; /*Flip default padding-top value with padding-bottom */
-  padding-bottom: 5px; /*Flip default padding-bottom value with padding-top*/
-  color: white;
+#header {
+
+  color: #03528e;
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center;
 }
 
 #login_form { /*CSS for sample search box. Remove if desired */
@@ -193,11 +229,11 @@ a {
   margin-left: auto;
   margin-right: auto;
   text-align: left;
-  color: #000;
+  color: #6A9E1F;
 }
 #nav-header h2 {
   display: inline;
-  color: #000;
+  color: #6A9E1F;
 }
 #nav-header .title {
   display: inline;

@@ -63,5 +63,6 @@ gem "simplecov"
 gem 'pdf-reader'
 gem 'test-unit', :require => "test/unit"
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bigdecimal'
 
 #gem "mocha", :group => :test
