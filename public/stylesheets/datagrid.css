@@ -19,7 +19,7 @@ table.datagrid a {
 }
 table.datagrid a:hover {
 	text-decoration: none;
-	color: #D97600;
+	color: #0475CB;
 }
 
 /*	=============================================== */
@@ -94,23 +94,23 @@ thead.datagrid th:hover {
 	padding: 5px 3px 3px;
 }
 .dg_list_line_odd:hover {
-	background-color: #FFFFFF;
-	color: #D97600;
+	color: #FFFFFF;
+	background-color: #D97600;
 	font-weight: bold;
 }
 .dg_list_line_odd:hover a {
-	background-color: #FFFFFF;
-	color: #D97600;
+	color: #FFFFFF;
+	background-color: #D97600;
 	text-decoration: none;
 }
 .dg_list_line_even:hover {
-	background-color: #FFFFFF;
-	color: #D97600;
+	color: #FFFFFF;
+	background-color: #D97600;
 	font-weight: bold;
 }
 .dg_list_line_even:hover a {
-	background-color: #FFFFFF;
-	color: #D97600;
+	color: #FFFFFF;
+	background-color: #D97600;
 	text-decoration: none;
 }
 

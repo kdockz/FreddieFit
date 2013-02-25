@@ -30,7 +30,7 @@
       <td><%= link_to food.name, food %></td>
       <td><%= food.show_food_type %></td>
       <td><%= food.calories %></td>
-      <td><%= food.cost %></td>
+      <td><%= number_to_currency(food.cost) %></td>
       <% if can? :modify, Food %>
       <td><%= link_to image_tag('icons/trash.gif', :border => 0, :size => "20x20"), food, :confirm => 'Are you sure?', :method => :delete  %></td> 
       <% end %>
