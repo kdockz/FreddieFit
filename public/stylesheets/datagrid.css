@@ -4,7 +4,7 @@
 /*	General table stuff for datagrid css class */
 
 table.datagrid {   
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
 	color: #000000;
 	text-align: left;
 	border-collapse: collapse;
@@ -16,11 +16,10 @@ table.datagrid tr td {
 }
 table.datagrid a {
 	text-decoration: none;
-	color: #8A0808;
 }
 table.datagrid a:hover {
 	text-decoration: none;
-	color: #0681e0;
+	color: #D97600;
 }
 
 /*	=============================================== */
@@ -38,8 +37,8 @@ caption.datagrid {
 }
 thead.datagrid th {
 	font-size: 105%;
-	color: #ffffff;
-	background-color: #8A0808;
+	color: #FFFFFF;
+	background-color: #000000;
 	height: 20px;
 	font-weight: bold;
 	padding: 10px;
@@ -68,8 +67,18 @@ thead.datagrid th:hover {
 	text-align: left;
 	vertical-align: top;
 	line-height: 2.5;
-	background-color: #888888;
+	background: rgb(119,176,33); /* Old browsers */
+  	/*background: -moz-linear-gradient(top,  rgba(119,176,33,1) 0%, rgba(103,155,29,1) 100%); /* FF3.6+ */*/
+  	/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(119,176,33,1)), color-stop(100%,rgba(103,155,29,1))); /* Chrome,Safari4+ */*/
+  	/*background: -webkit-linear-gradient(top,  rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* Chrome10+,Safari5.1+ */*/
+ 	/*background: -o-linear-gradient(top,  rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* Opera 11.10+ */*/
+  	/*background: -ms-linear-gradient(top, rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* IE10+ */*/
+ 	/*background: linear-gradient(top, rgba(119,176,33,1) 0%,rgba(103,155,29,1) 100%); /* W3C */ */
 	padding: 3px;
+}
+.dg_list_line_even a {
+	font: 90% Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
 }
 .dg_list_line_even img {
 	vertical-align: top;
@@ -80,20 +89,20 @@ thead.datagrid th:hover {
 	padding: 5px 3px 3px;
 }
 .dg_list_line_odd:hover {
-	background-color: #FFFBD0;
-	color: #000000;
+	background-color: #FFFFFF;
+	color: #D97600;
 }
 .dg_list_line_odd:hover a {
-	background-color: #FFFBD0;
+	background-color: #FFFFFF;
 	color: #000000;
 	text-decoration: none;
 }
 .dg_list_line_even:hover {
-	background-color: #FFFBD0;
-	color: #000000;
+	background-color: #FFFFFF;
+	color: #D97600;
 }
 .dg_list_line_even:hover a {
-	background-color: #FFFBD0;
+	background-color: #FFFFFF;
 	color: #000000;
 	text-decoration: none;
 }

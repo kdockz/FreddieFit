@@ -1,11 +1,10 @@
 <table style="padding: 20px">
 	<tr>
 		<td>
-
+			<div id="page-content">
 			<div id="nav-header">
 				<h2>My Registrations</h2>
 			</div>
-			<div id="page-content">
 				<% unless @registrations.nil? || @registrations.empty? %>
 				<table>
 					<% @registrations.each do |registration| %>

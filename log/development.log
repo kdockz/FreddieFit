@@ -29501,3 +29501,1294 @@ Processing by HomeController#index as HTML
   Rendered home/_admin_home.html.erb (1.0ms)
   Rendered home/index.html.erb within layouts/application (2.9ms)
 Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:38:30 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:38:31 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (7.8ms)
+  Rendered events/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2013-02-24 23:38:31 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[36mAnnouncement Load (1.0ms)[0m  [1mSELECT "announcements".* FROM "announcements" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered announcements/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/foods" for 127.0.0.1 at 2013-02-24 23:38:32 -0500
+Processing by FoodsController#index as HTML
+  [1m[36mFood Load (0.0ms)[0m  [1mSELECT "foods".* FROM "foods" [0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered foods/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:38:33 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (0.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:38:37 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:39:44 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:40:08 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:40:26 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:40:54 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:41:35 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (43.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (63.5ms)
+Completed 200 OK in 75ms (Views: 74.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:43:37 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (7.8ms)
+  Rendered events/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:44:11 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:44:44 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:45:11 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (45.9ms)
+  Rendered events/index.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 76ms (Views: 75.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:45:21 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:45:21 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (5.9ms)
+  Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:45:21 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (5.9ms)
+  Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:45:53 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:46:10 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:49:32 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2013-02-24 23:49:33 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[36mAnnouncement Load (1.0ms)[0m  [1mSELECT "announcements".* FROM "announcements" [0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered announcements/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:49:34 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (0.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:49:36 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2013-02-24 23:49:39 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:49:39 -0500
+Processing by HomeController#index as HTML
+  Rendered home/_guest_home.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:50:02 -0500
+Processing by HomeController#index as HTML
+  Rendered home/_guest_home.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:50:04 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (4.9ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:51:36 -0500
+Processing by HomeController#index as HTML
+  Rendered home/_guest_home.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:51:38 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (4.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (7.8ms)
+  Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:52:41 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (4.9ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (5.9ms)
+  Rendered events/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 33ms (Views: 31.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:52:42 -0500
+Processing by HomeController#index as HTML
+  Rendered home/_guest_home.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-02-24 23:52:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "login"=>"kdockery", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'kdockery' LIMIT 1[0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'kdockery' LIMIT 1
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-02-24 23:52:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "login"=>"kdockz", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'kdockz' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:52:55 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:53:40 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (0.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:53:58 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:54:16 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (0.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:56:50 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-24 23:58:35 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (1.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:58:37 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (5.9ms)
+  Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-24 23:58:59 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 34ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:00:12 -0500
+Processing by HomeController#index as HTML
+  Rendered home/_guest_home.html.erb (0.0ms)
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-02-25 00:00:34 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UvBB3lcjKuxtNlM6B6HVhDhQ/V/0UCttB+oyO59AtPY=", "login"=>"kdockz", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."username" = 'kdockz' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 85ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:00:34 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:04:53 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:06:34 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:06:38 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (1.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:08:02 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:08:06 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (0.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:08:15 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:08:23 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (0.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:08:28 -0500
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRegistration Load (0.0ms)[0m  [1mSELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1
+  Rendered home/_admin_home.html.erb (1.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:08:32 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2013-02-25 00:08:33 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[36mAnnouncement Load (0.0ms)[0m  [1mSELECT "announcements".* FROM "announcements" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered announcements/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foods" for 127.0.0.1 at 2013-02-25 00:08:33 -0500
+Processing by FoodsController#index as HTML
+  [1m[36mFood Load (1.0ms)[0m  [1mSELECT "foods".* FROM "foods" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered foods/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/show_classes" for 127.0.0.1 at 2013-02-25 00:08:34 -0500
+Processing by EventsController#show_classes as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (event_type = 0) AND (start_date >= '2013-02-24')[0m
+  Rendered events/show_classes.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:08:34 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (0.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (2.0ms)
+  Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2013-02-25 00:08:53 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[35mAnnouncement Load (1.0ms)[0m  SELECT "announcements".* FROM "announcements" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered announcements/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:08:54 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:09:40 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:09:56 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (6.8ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (7.8ms)
+  Rendered events/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:10:27 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (6.8ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:11:33 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 36ms (Views: 36.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:12:44 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:13:51 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:14:09 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:15:10 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-24')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-24')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2013-02-25 00:15:12 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered events/_form.html.erb (5.9ms)
+  Rendered events/edit.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2013-02-25 00:15:15 -0500
+Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_form.html.erb (4.9ms)
+  Rendered events/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:15:31 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (86.9ms)[0m  [1mINSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:15:31 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:15:31 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[35m (9.8ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 102ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:16:54 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:16:54 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:16:54 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2013-02-25 00:17:03 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_form.html.erb (4.9ms)
+  Rendered events/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:17:06 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:17:06 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:17:06 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:18:34 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:18:34 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:18:34 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.2ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:21:25 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:21:25 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:21:25 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2013-02-25 00:21:28 -0500
+Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_form.html.erb (4.9ms)
+  Rendered events/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:21:30 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:21:30 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:21:30 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:22:09 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:22:09 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:22:09 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2013-02-25 00:22:11 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_form.html.erb (4.9ms)
+  Rendered events/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:22:12 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"1", "start_date"=>"21-02-2013", "end_date"=>"21-02-2013", "start_time"=>"3pm", "end_time"=>"5pm", "location"=>"TBD", "capacity"=>"100", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["active", true], ["capacity", 100], ["created_at", Mon, 25 Feb 2013 05:22:12 UTC +00:00], ["description", "test"], ["end_date", Thu, 21 Feb 2013], ["end_time", "5pm"], ["event_type", 1], ["location", "TBD"], ["registration", true], ["start_date", Thu, 21 Feb 2013], ["start_time", "3pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:22:12 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (34.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-25 00:25:46 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (96.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRegistration Load (1.0ms)[0m  SELECT "registrations".* FROM "registrations" WHERE "registrations"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "registrations" WHERE "registrations"."user_id" = 1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "user_foods" WHERE "user_foods"."user_id" = 1
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1[0m
+  Rendered home/_admin_home.html.erb (2.9ms)
+  Rendered home/index.html.erb within layouts/application (183.6ms)
+Completed 200 OK in 847ms (Views: 544.0ms | ActiveRecord: 164.1ms)
+
+
+Started GET "/foods" for 127.0.0.1 at 2013-02-25 00:26:03 -0500
+Processing by FoodsController#index as HTML
+  [1m[35mFood Load (0.0ms)[0m  SELECT "foods".* FROM "foods" 
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered foods/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 27ms (Views: 16.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2013-02-25 00:26:04 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[35mAnnouncement Load (1.0ms)[0m  SELECT "announcements".* FROM "announcements" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered announcements/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/foods" for 127.0.0.1 at 2013-02-25 00:26:05 -0500
+Processing by FoodsController#index as HTML
+  [1m[35mFood Load (0.0ms)[0m  SELECT "foods".* FROM "foods" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered foods/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/foods/1" for 127.0.0.1 at 2013-02-25 00:26:15 -0500
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFood Load (1.0ms)[0m  SELECT "foods".* FROM "foods" WHERE "foods"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mFavoriteFood Load (0.0ms)[0m  [1mSELECT "favorite_foods".* FROM "favorite_foods" WHERE "favorite_foods"."user_id" = 1 AND "favorite_foods"."food_id" = 1 LIMIT 1[0m
+  [1m[35mUserFood Load (0.0ms)[0m  SELECT "user_foods".* FROM "user_foods" WHERE "user_foods"."user_id" = 1 AND "user_foods"."food_id" = 1 LIMIT 1
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered foods/show.html.erb within layouts/application (210.0ms)
+Completed 200 OK in 222ms (Views: 219.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/announcements" for 127.0.0.1 at 2013-02-25 00:26:19 -0500
+Processing by AnnouncementsController#index as HTML
+  [1m[35mAnnouncement Load (0.0ms)[0m  SELECT "announcements".* FROM "announcements" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered announcements/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 46ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:26:20 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (1519.6ms)
+  Rendered events/_upcoming_events.html.erb (6.8ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (8.8ms)
+  Rendered events/index.html.erb within layouts/application (1543.0ms)
+Completed 200 OK in 1569ms (Views: 1550.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:27:22 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:27:30 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:29:57 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:31:01 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:31:23 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:31:58 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (43.9ms)
+  Rendered events/_upcoming_events.html.erb (6.8ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 74ms (Views: 72.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:32:24 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (5.9ms)
+  Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:32:38 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:34:53 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_all_events.html.erb (6.8ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')[0m
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2013-02-25 00:35:00 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered events/_form.html.erb (5.9ms)
+  Rendered events/edit.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/events/1" for 127.0.0.1 at 2013-02-25 00:35:03 -0500
+Processing by EventsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"Spring", "description"=>"Spinning class.", "event_type"=>"0", "start_date"=>"2012-10-15", "end_date"=>"2012-10-15", "start_time"=>"12pm", "end_time"=>"1pm", "location"=>"Fitness Center", "capacity"=>"20", "registration"=>"true"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1382.9ms)[0m  [1mUPDATE "events" SET "title" = 'Spring', "updated_at" = '2013-02-25 05:35:03.514493' WHERE "events"."id" = 1[0m
+SQLite3::CantOpenException: unable to open database file: UPDATE "events" SET "title" = 'Spring', "updated_at" = '2013-02-25 05:35:03.514493' WHERE "events"."id" = 1
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 1434ms
+
+ActiveRecord::StatementInvalid (SQLite3::CantOpenException: unable to open database file: UPDATE "events" SET "title" = 'Spring', "updated_at" = '2013-02-25 05:35:03.514493' WHERE "events"."id" = 1):
+  app/controllers/events_controller.rb:85:in `update'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 00:35:17 -0500
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')
+  Rendered events/_past_events.html.erb (6.8ms)
+  Rendered events/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2013-02-25 00:35:19 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_form.html.erb (4.9ms)
+  Rendered events/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:35:33 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"0", "start_date"=>"28-02-2013", "end_date"=>"28-02-2013", "start_time"=>"2pm", "end_time"=>"3pm", "location"=>"test", "capacity"=>"10", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1379.9ms)[0m  INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["active", true], ["capacity", 10], ["created_at", Mon, 25 Feb 2013 05:35:33 UTC +00:00], ["description", "test"], ["end_date", Thu, 28 Feb 2013], ["end_time", "3pm"], ["event_type", 0], ["location", "test"], ["registration", true], ["start_date", Thu, 28 Feb 2013], ["start_time", "2pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:35:33 UTC +00:00], ["user_id", 1]]
+SQLite3::CantOpenException: unable to open database file: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 1383ms
+
+ActiveRecord::StatementInvalid (SQLite3::CantOpenException: unable to open database file: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20121012040503)
+Migrating to CreateEvents (20121012040653)
+Migrating to CreateAnnouncements (20121012040831)
+Migrating to CreateRegistrations (20121013215608)
+Migrating to CreateFoods (20121014225833)
+Migrating to CreateFoodLocations (20121014230447)
+Migrating to CreateUserFoods (20121015022040)
+Migrating to CreateFavoriteFoods (20121015022243)
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("announcements")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("classes")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("courses")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("events")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("favorite_foods")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("food_locations")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("foods")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("registrations")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("user_foods")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/events/new" for 127.0.0.1 at 2013-02-25 00:49:10 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered events/_form.html.erb (210.0ms)
+  Rendered events/new.html.erb within layouts/application (391.6ms)
+Completed 200 OK in 891ms (Views: 755.9ms | ActiveRecord: 64.5ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2013-02-25 00:49:14 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5UdFrfIu2lUGq6//+EVofUHtT8jzazuIPPFRbO/HEsw=", "event"=>{"title"=>"test", "description"=>"test", "event_type"=>"0", "start_date"=>"28-02-2013", "end_date"=>"28-02-2013", "start_time"=>"2pm", "end_time"=>"3pm", "location"=>"test", "capacity"=>"10", "registration"=>"true"}, "commit"=>"Create Event"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (39.1ms)[0m  INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["active", true], ["capacity", 10], ["created_at", Mon, 25 Feb 2013 05:49:14 UTC +00:00], ["description", "test"], ["end_date", Thu, 28 Feb 2013], ["end_time", "3pm"], ["event_type", 0], ["location", "test"], ["registration", true], ["start_date", Thu, 28 Feb 2013], ["start_time", "2pm"], ["title", "test"], ["trainer_id", nil], ["updated_at", Mon, 25 Feb 2013 05:49:14 UTC +00:00], ["user_id", 1]]
+SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 47ms
+
+ActiveRecord::StatementInvalid (SQLite3::ReadOnlyException: attempt to write a readonly database: INSERT INTO "events" ("active", "capacity", "created_at", "description", "end_date", "end_time", "event_type", "location", "registration", "start_date", "start_time", "title", "trainer_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)):
+  app/controllers/events_controller.rb:45:in `create'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (87.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1385.8ms)[0m  DROP TABLE "announcements"
+SQLite3::CantOpenException: unable to open database file: DROP TABLE "announcements"
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
