@@ -31276,3 +31276,52 @@ Processing by EventsController#show_classes as HTML
   [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE (event_type = 0) AND (start_date >= '2013-02-25')
   Rendered events/show_classes.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_classes" for 127.0.0.1 at 2013-02-25 02:40:36 -0500
+Processing by EventsController#show_classes as HTML
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (event_type = 0) AND (start_date >= '2013-02-25')[0m
+  Rendered events/show_classes.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 02:40:38 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `upcoming' for #<Array:0x82ae2928>):
+  app/controllers/events_controller.rb:9:in `index'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (58.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 02:41:10 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "events".* FROM "events" [0m
+Completed 500 Internal Server Error in 19ms
+
+NoMethodError (undefined method `past' for #<Array:0x815849f0>):
+  app/controllers/events_controller.rb:12:in `index'
+
+
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /usr/lib/ruby/gems/1.9.1/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2013-02-25 02:41:31 -0500
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" 
+  Rendered events/_all_events.html.erb (5.9ms)
+  Rendered events/_upcoming_events.html.erb (5.9ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE (end_date < '2013-02-25')[0m
+  [1m[35mEvent Load (0.0ms)[0m  SELECT "events".* FROM "events" WHERE (end_date < '2013-02-25')
+  Rendered events/_past_events.html.erb (5.9ms)
+  Rendered events/index.html.erb within layouts/application (107.4ms)
+Completed 200 OK in 134ms (Views: 115.2ms | ActiveRecord: 2.9ms)

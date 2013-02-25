@@ -6,10 +6,10 @@ class EventsController < ApplicationController
     @events = Event.all
 
     # Grab upcoming events only.
-    @upcoming_events = Event.all.upcoming
+    @upcoming_events = Event.upcoming
     
     #Grab past events.
-    @past_events = Event.all.past
+    @past_events = Event.past
 
   end
 
